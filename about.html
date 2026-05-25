@@ -13,8 +13,8 @@
   body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:clip}
   
   
-  #wrap{background:var(--bg);min-height:100vh}
-  .hero{padding:4rem 5rem 3rem;max-width:860px;opacity:0;animation:fadeUp 1s ease forwards .3s}
+  #wrap{background:var(--bg);min-height:100vh;padding-top:64px}
+  .hero{padding:8rem 5rem 5rem;max-width:860px;opacity:0;animation:fadeUp 1s ease forwards .3s}
   .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.25rem;display:block}
   h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
   h1 .a{color:var(--bronze)}
@@ -86,27 +86,19 @@
     .foot-right{text-align:left}
   }
 
-  /* ── FIXED HEADER ── */
+  /* FIXED HEADER */
   .n-header{position:fixed;top:0;left:0;right:0;z-index:10000;height:64px;background:#1C1510;border-bottom:1px solid #3a2f24;display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
   .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;white-space:nowrap}
   .n-header-nav{display:flex;gap:2rem;align-items:center}
-  .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,0.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
+  .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
   .n-header-nav a:hover{color:#F5EEE4}
-  /* ── HAMBURGER ── */
   .n-ham{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
   .n-ham span{display:block;width:22px;height:2px;background:#F5EEE4;transition:all .3s ease}
-  /* ── MOBILE OVERLAY ── */
   .n-overlay{display:none;position:fixed;inset:0;background:#1C1510;z-index:10001;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3rem}
-  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.08em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:1.25rem;opacity:.7;transition:opacity .2s,color .2s}
+  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:.85rem;opacity:.7;transition:opacity .2s,color .2s;white-space:nowrap}
   .n-overlay a:hover{opacity:1;color:#D4995A}
   .n-overlay-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;cursor:pointer;color:#F5EEE4;font-size:2rem;line-height:1;padding:8px}
-  /* ── PAGE OFFSET ── */
-  .n-page-offset{padding-top:64px}
-  @media(max-width:768px){
-    .n-header{padding:0 1.5rem}
-    .n-header-nav{display:none}
-    .n-ham{display:flex}
-  }
+  @media(max-width:768px){.n-header{padding:0 1.5rem}.n-header-nav{display:none}.n-ham{display:flex}}
 </style>
 </head>
 <body>
@@ -123,14 +115,14 @@
   </button>
 </header>
 <div class="n-overlay" id="nOverlay">
-  <button class="n-overlay-close" onclick="document.getElementById('nOverlay').style.display='none'" aria-label="Close menu">✕</button>
+  <button class="n-overlay-close" onclick="document.getElementById('nOverlay').style.display='none'" aria-label="Close">✕</button>
   <a href="/index.html" onclick="document.getElementById('nOverlay').style.display='none'">Home</a>
   <a href="/portfolio.html" onclick="document.getElementById('nOverlay').style.display='none'">Portfolio</a>
   <a href="/work-with-me.html" onclick="document.getElementById('nOverlay').style.display='none'">Work with me</a>
   <a href="/about.html" onclick="document.getElementById('nOverlay').style.display='none'">About</a>
 </div>
 
-  <div id="wrap" class="n-page-offset">
+  <div id="wrap">
 
   <div class="hero">
     <span class="eyebrow">About — Saleh Ghiyath</span>
