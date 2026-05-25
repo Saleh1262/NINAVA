@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — NINAVA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1C1510;--bg2:#231a13;--bg3:#2a1f16;--cream:#F5EEE4;--bronze:#D4995A;--bronze2:#a06e38;--muted:#D0BFA8;--dim:#8a7060;--rule:#3a2f24}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:clip}
+  
+  
+  #wrap{background:var(--bg);min-height:100vh}
+  .hero{padding:4rem 5rem 3rem;max-width:860px;opacity:0;animation:fadeUp 1s ease forwards .3s}
+  .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.25rem;display:block}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
+  h1 .a{color:var(--bronze)}
+  .rule{width:calc(100% - 10rem);margin:0 5rem;height:1px;background:var(--rule)}
+  .creds{padding:4rem 5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;opacity:0;animation:fadeUp 1s ease forwards .7s}
+  .cred-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.3rem}
+  .cred-label{font-size:.82rem;color:var(--muted);line-height:1.5}
+  .timeline{padding:4rem 5rem;background:var(--bg2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .timeline h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--cream);margin-bottom:2.5rem}
+  .tl-item{display:flex;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+  .tl-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .tl-year{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--bronze);flex-shrink:0;width:80px;padding-top:2px}
+  .tl-company{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:.3rem}
+  .tl-role{font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.4rem}
+  .tl-desc{font-size:.88rem;color:var(--muted);line-height:1.7}
+  .ninava-section{padding:4rem 5rem;max-width:760px;opacity:0;animation:fadeUp 1s ease forwards .9s}
+  .ninava-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--cream);margin-bottom:1.5rem}
+  .ninava-section p{font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem}
+  .ninava-section p strong{color:var(--cream);font-weight:500}
+  .cta{padding:4rem 5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;background:var(--bg2);border-top:1px solid var(--rule)}
+  .cta h2{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--cream);line-height:1;margin-bottom:.4rem}
+  .cta p{font-size:.95rem;color:var(--muted)}
+  .cta-btn{padding:.9rem 1.8rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;white-space:nowrap}
+  .cta-btn:hover{background:var(--bronze2)}
+  footer{padding:2rem 5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+  .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.15em;color:var(--dim)}
+  .foot-right{font-size:.82rem;color:var(--muted);text-align:right;line-height:1.7}
+  .photo-section{padding:0 5rem 4rem;opacity:0;animation:fadeUp 1s ease forwards .4s}
+  .photo-wrap{display:flex;gap:4rem;align-items:flex-start;max-width:860px}
+  .photo-img{width:280px;flex-shrink:0;border-radius:4px;overflow:hidden}
+  .photo-img img{width:100%;height:360px;object-fit:cover;object-position:top;display:block;filter:grayscale(20%)}
+  .photo-text{flex:1;padding-top:.5rem}
+  .photo-text p{font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem}
+  .photo-text p strong{color:var(--cream);font-weight:500}
+  .photo-text blockquote{border-left:3px solid var(--bronze);padding-left:1.5rem;margin:2rem 0;font-size:1.1rem;color:var(--cream);line-height:1.8;font-style:italic}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:768px){
+    
+    
+    
+    
+    .hero,.ninava-section{padding-left:1.5rem;padding-right:1.5rem}
+    .hero{padding-top:5.5rem}
+    h1{font-size:clamp(2.5rem,14vw,4rem)}
+    .rule{width:calc(100% - 3rem);margin:0 1.5rem}
+    .creds,.timeline,.cta,.ninava-section{padding:3rem 1.5rem}
+    .creds{grid-template-columns:1fr 1fr}
+    .tl-item{flex-direction:column;gap:.5rem}
+    .tl-year{width:auto}
+    .photo-section{padding:0 1.5rem 3rem}
+    .photo-wrap{flex-direction:column;gap:2rem}
+    .photo-img{width:100%}
+    .photo-img img{height:280px}
+    .photo-text blockquote{font-size:.95rem}
+    .cta{flex-direction:column;align-items:flex-start;gap:1.5rem}
+    footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start}
+    .foot-right{text-align:left}
+  }
+
+  /* ── FIXED HEADER ── */
+  .n-header{position:fixed;top:0;left:0;right:0;z-index:10000;height:64px;background:#1C1510;border-bottom:1px solid #3a2f24;display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
+  .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;white-space:nowrap}
+  .n-header-nav{display:flex;gap:2rem;align-items:center}
+  .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,0.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
+  .n-header-nav a:hover{color:#F5EEE4}
+  /* ── HAMBURGER ── */
+  .n-ham{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+  .n-ham span{display:block;width:22px;height:2px;background:#F5EEE4;transition:all .3s ease}
+  /* ── MOBILE OVERLAY ── */
+  .n-overlay{display:none;position:fixed;inset:0;background:#1C1510;z-index:10001;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3rem}
+  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.08em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:1.25rem;opacity:.7;transition:opacity .2s,color .2s}
+  .n-overlay a:hover{opacity:1;color:#D4995A}
+  .n-overlay-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;cursor:pointer;color:#F5EEE4;font-size:2rem;line-height:1;padding:8px}
+  /* ── PAGE OFFSET ── */
+  .n-page-offset{padding-top:64px}
+  @media(max-width:768px){
+    .n-header{padding:0 1.5rem}
+    .n-header-nav{display:none}
+    .n-ham{display:flex}
+  }
+</style>
+</head>
+<body>
+<header class="n-header">
+  <a href="/index.html" class="n-header-logo">NINAVA</a>
+  <nav class="n-header-nav">
+    <a href="/index.html">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+    <a href="/work-with-me.html">Work with me</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <button class="n-ham" onclick="document.getElementById('nOverlay').style.display='flex'" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="n-overlay" id="nOverlay">
+  <button class="n-overlay-close" onclick="document.getElementById('nOverlay').style.display='none'" aria-label="Close menu">✕</button>
+  <a href="/index.html" onclick="document.getElementById('nOverlay').style.display='none'">Home</a>
+  <a href="/portfolio.html" onclick="document.getElementById('nOverlay').style.display='none'">Portfolio</a>
+  <a href="/work-with-me.html" onclick="document.getElementById('nOverlay').style.display='none'">Work with me</a>
+  <a href="/about.html" onclick="document.getElementById('nOverlay').style.display='none'">About</a>
+</div>
+
+  <div id="wrap" class="n-page-offset">
+
+  <div class="hero">
+    <span class="eyebrow">About — Saleh Ghiyath</span>
+    <h1>Practical<br><span class="a">innovation.</span></h1>
+  </div>
+
+  <div class="photo-section">
+    <div class="photo-wrap">
+      <div class="photo-img">
+        <img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/saleh_at_COCKLEBAY177.jpg?v=1779453272" alt="Saleh Ghiyath — Founder, NINAVA">
+      </div>
+      <div class="photo-text">
+        <p>I grew up watching people build remarkable things from almost nothing.</p>
+        <p>In Baghdad, under sanctions that cut off supply chains and starved manufacturers of materials, ordinary people engineered extraordinary solutions — not because they were exceptional, but because necessity left no other option. That spirit of <strong>practical innovation</strong> shaped everything I do.</p>
+        <blockquote>"Purpose means adding real value — something I genuinely believe in. Not just chasing quick trends."</blockquote>
+        <p>I moved to New Zealand and spent <strong>20+ years engineering hardware products</strong> that shipped globally. Battery management systems for Yamaha. Marine electronics for NAVICO. Storage systems for Sistema Plastics at a $2M budget. A portable speaker selected by Sony USA that sold 50,000 units in its first year.</p>
+        <p>I hold <strong>7 patents</strong> and won the NZ Plastics Industry Gold Prize in 2004. I am not a designer who hands over pretty renders. I am an engineer who understands what happens when the design hits the production floor — and I design accordingly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="creds">
+    <div><span class="cred-val">20+</span><span class="cred-label">Years product &amp; mechanical design engineering</span></div>
+    <div><span class="cred-val">7</span><span class="cred-label">Patents granted</span></div>
+    <div><span class="cred-val">$2M</span><span class="cred-label">Project budget managed</span></div>
+    <div><span class="cred-val">50k</span><span class="cred-label">Units sold — year one</span></div>
+    <div><span class="cred-val">Gold</span><span class="cred-label">NZ Plastics Industry Prize 2004</span></div>
+    <div><span class="cred-val">Sony</span><span class="cred-label">Product selected by Sony USA</span></div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="timeline">
+    <h2>Career highlights</h2>
+    <div class="tl-item">
+      <div class="tl-year">2021–Now</div>
+      <div class="tl-body">
+        <div class="tl-company">Invenco Group</div>
+        <div class="tl-role">Mechanical / Product Design Engineer</div>
+        <div class="tl-desc">Delivering the EVO G6 payment terminal — a complex product with integrated printer and universal card reading capability.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2019–2021</div>
+      <div class="tl-body">
+        <div class="tl-company">BEP Marine / ASG by Brunswick</div>
+        <div class="tl-role">Mechanical / Design Lead Engineer</div>
+        <div class="tl-desc">Led mechanical design for the Smart Battery Hub. 300amp power surge testing, IPX7 rated, full production line setup in Juarez, Mexico.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2014–2019</div>
+      <div class="tl-body">
+        <div class="tl-company">NAVICO — Simrad · Lowrance</div>
+        <div class="tl-role">Mechanical / Design Lead Engineer</div>
+        <div class="tl-desc">Led product design for rugged marine electronics. IPX6/7 enclosures, DFM/DFA, vendor assessment, factory trials. Products sold globally.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2013–2014</div>
+      <div class="tl-body">
+        <div class="tl-company">Sistema Plastics</div>
+        <div class="tl-role">Product Design Manager</div>
+        <div class="tl-desc">$2M USD storage bin development program. 21 tools made, 7 patents granted, delivered within 12 months.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2008–2012</div>
+      <div class="tl-body">
+        <div class="tl-company">Fisher &amp; Paykel Appliances</div>
+        <div class="tl-role">Product Development Engineer</div>
+        <div class="tl-desc">Storage Systems Refrigeration. Toyota LFPD and LAMDA discipline. DVP, PPAP, UL standards, 6 Sigma decision tools.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2004–2007</div>
+      <div class="tl-body">
+        <div class="tl-company">Slab International — Sony · Maxell</div>
+        <div class="tl-role">Industrial Designer / Design Engineer</div>
+        <div class="tl-desc">Designed the Galaxy speaker system — selected by Sony USA. Maxell 2.1 variant sold 50,000 units in year one. 300+ designs created.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ninava-section">
+    <h2>Why NINAVA</h2>
+    <p>NINAVA is everything I wish existed. Products designed properly — with real engineering behind them, not just aesthetics. Built to last, not built to be replaced.</p>
+    <p>The name comes from a place of origins. Like the brand — <strong>built from constraint, designed for the distance.</strong></p>
+  </div>
+
+  <div class="cta">
+    <div>
+      <h2>Work with me.</h2>
+      <p>Available for consulting — NZ, AU, and international remote.</p>
+    </div>
+    <a href="/work-with-me.html" class="cta-btn">See consulting services</a>
+  </div>
+
+  <footer>
+    <div class="foot-logo">NINAVA</div>
+    <div class="foot-right">
+      saleh@ninava.co.nz &nbsp;·&nbsp; +64 21 1262516<br>
+      ninava.co.nz &nbsp;·&nbsp; Auckland, New Zealand
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

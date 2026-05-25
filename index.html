@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NINAVA — Built to go the distance.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1C1510;--bg2:#231a13;--cream:#F5EEE4;--bronze:#D4995A;--bronze2:#a06e38;--muted:#D0BFA8;--dim:#8a7060}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.7;overflow-x:clip}
+
+  
+
+
+  
+
+  /* ── FIXED HEADER ── */
+  .n-header{position:fixed;top:0;left:0;right:0;z-index:10000;height:64px;background:#1C1510;border-bottom:1px solid #3a2f24;display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
+  .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;white-space:nowrap}
+  .n-header-nav{display:flex;gap:2rem;align-items:center}
+  .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,0.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
+  .n-header-nav a:hover{color:#F5EEE4}
+  /* ── HAMBURGER ── */
+  .n-ham{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+  .n-ham span{display:block;width:22px;height:2px;background:#F5EEE4;transition:all .3s ease}
+  /* ── MOBILE OVERLAY ── */
+  .n-overlay{display:none;position:fixed;inset:0;background:#1C1510;z-index:10001;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3rem}
+  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.08em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:1.25rem;opacity:.7;transition:opacity .2s,color .2s}
+  .n-overlay a:hover{opacity:1;color:#D4995A}
+  .n-overlay-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;cursor:pointer;color:#F5EEE4;font-size:2rem;line-height:1;padding:8px}
+  /* ── PAGE OFFSET ── */
+  .n-page-offset{padding-top:64px}
+  @media(max-width:768px){
+    .n-header{padding:0 1.5rem}
+    .n-header-nav{display:none}
+    .n-ham{display:flex}
+  }
+</style>
+</head>
+<body>
+<header class="n-header">
+  <a href="/index.html" class="n-header-logo">NINAVA</a>
+  <nav class="n-header-nav">
+    <a href="/index.html">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+    <a href="/work-with-me.html">Work with me</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <button class="n-ham" onclick="document.getElementById('nOverlay').style.display='flex'" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="n-overlay" id="nOverlay">
+  <button class="n-overlay-close" onclick="document.getElementById('nOverlay').style.display='none'" aria-label="Close menu">✕</button>
+  <a href="/index.html" onclick="document.getElementById('nOverlay').style.display='none'">Home</a>
+  <a href="/portfolio.html" onclick="document.getElementById('nOverlay').style.display='none'">Portfolio</a>
+  <a href="/work-with-me.html" onclick="document.getElementById('nOverlay').style.display='none'">Work with me</a>
+  <a href="/about.html" onclick="document.getElementById('nOverlay').style.display='none'">About</a>
+</div>
+  <div id="wrap" class="n-page-offset">
+
+  <div class="page">
+
+    <!-- 1. HEADLINE -->
+    <p class="eyebrow">Something is coming</p>
+    <h1>Built to<br><span class="accent">go the</span><br>distance.</h1>
+    <p class="sub">Premium workspace products engineered to last. Product design consulting for hardware companies that need it done right.</p>
+    <div class="tag-line">
+      <span>Products</span><span class="dot">·</span><span>Consulting</span><span class="dot">·</span><span>Auckland, NZ</span>
+    </div>
+
+    <!-- 2. THREE POINTS -->
+    <div class="why">
+      <div>
+        <div class="why-num">01</div>
+        <div class="why-title">Engineered, not just designed</div>
+        <div class="why-body">Every product goes through DFM review, material research, and prototype testing before anything gets made. Not because it's slow — because it's how you make something that doesn't fail.</div>
+      </div>
+      <div>
+        <div class="why-num">02</div>
+        <div class="why-title">Born from constraint</div>
+        <div class="why-body">Inspired by the ingenuity witnessed in Baghdad under sanctions — where necessity demanded real solutions. NINAVA carries that same philosophy: practical innovation, nothing wasted.</div>
+      </div>
+      <div>
+        <div class="why-num">03</div>
+        <div class="why-title">Built to last</div>
+        <div class="why-body">Not built to be replaced. Every material, tolerance, and finish decision is made with longevity in mind. Buy it once. Use it for years. That's the point.</div>
+      </div>
+    </div>
+
+    <!-- NINAVA CHARGE -->
+    <div class="charge-soon">
+      <div class="charge-soon-label">Coming soon</div>
+      <div class="charge-soon-title">NINAVA Charge</div>
+      <p class="charge-soon-desc">Triple wireless charging pad — phone, earbuds, watch.</p>
+      <div class="charge-specs-row">
+        <div class="cs-item"><span class="cs-k">Dimensions</span><span class="cs-v">280 × 120 × 8 mm</span></div>
+        <div class="cs-item"><span class="cs-k">Materials</span><span class="cs-v">Aluminium + Leather</span></div>
+        <div class="cs-item"><span class="cs-k">Target price</span><span class="cs-v">$149–$199 NZD</span></div>
+        <div class="cs-item"><span class="cs-k">Charges</span><span class="cs-v">Phone · Earbuds · Watch</span></div>
+      </div>
+    </div>
+
+    <!-- 3. FORM AT BOTTOM -->
+    <div class="form-wrap">
+      <span class="form-label">Get early access</span>
+      <form class="form-row" id="form" onsubmit="handleSubmit(event)">
+        <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+        <button class="form-btn" type="submit">Notify me</button>
+      </form>
+
+      <p class="success" id="success">&#10003; &nbsp;You're in. We'll be in touch before anyone else.</p>
+    </div>
+
+  </div><!-- end .page -->
+
+  <footer>
+    <div class="foot-logo">NINAVA</div>
+    <div class="foot-right">
+      saleh@ninava.co.nz &nbsp;·&nbsp; +64 21 1262516<br>
+      ninava.co.nz &nbsp;·&nbsp; Auckland, New Zealand &nbsp;·&nbsp; &copy; 2025 NINAVA
+    </div>
+  </footer>
+
+</div>
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('form').style.display='none';
+  document.getElementById('note').style.display='none';
+  document.getElementById('success').style.display='block';
+}
+</script>
+</body>
+</html>
