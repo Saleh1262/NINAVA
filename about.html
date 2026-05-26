@@ -37,7 +37,7 @@
   .cta{padding:4rem 5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;background:var(--bg2);border-top:1px solid var(--rule)}
   .cta h2{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--cream);line-height:1;margin-bottom:.4rem}
   .cta p{font-size:.95rem;color:var(--muted)}
-  .cta-btn{padding:.9rem 1.8rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;white-space:nowrap}
+  .cta-btn{padding:.9rem 1.8rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:background .3s ease}
   .cta-btn:hover{background:var(--bronze2)}
   footer{padding:2rem 5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
   .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.15em;color:var(--dim)}
@@ -88,14 +88,14 @@
 
   /* FIXED HEADER */
   .n-header{position:fixed;top:0;left:0;right:0;z-index:10000;height:64px;background:#1C1510;border-bottom:1px solid #3a2f24;display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
-  .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;white-space:nowrap}
+  .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;display:block}
   .n-header-nav{display:flex;gap:2rem;align-items:center}
   .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
   .n-header-nav a:hover{color:#F5EEE4}
   .n-ham{display:none;background:#1C1510;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;border-radius:4px}
   .n-ham span{display:block;width:22px;height:2px;background:#F5EEE4;transition:all .3s ease}
   .n-overlay{display:none;position:fixed;inset:0;background:#1C1510;z-index:10001;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3rem}
-  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:.85rem;opacity:.7;transition:opacity .2s,color .2s;white-space:nowrap}
+  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:.85rem;opacity:.7;transition:opacity .2s,color .2s}
   .n-overlay a:hover{opacity:1;color:#D4995A}
   .n-overlay-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;cursor:pointer;color:#F5EEE4;font-size:2rem;line-height:1;padding:8px}
   @media(max-width:768px){.n-header{padding:0 1.5rem}.n-header-nav{display:none}.n-ham{display:flex}}
@@ -125,7 +125,6 @@
   <div id="wrap">
 
   <div class="hero">
-    <span class="eyebrow">About — Saleh Ghiyath</span>
     <h1>Practical<br><span class="a">innovation.</span></h1>
   </div>
 
@@ -136,10 +135,10 @@
       </div>
       <div class="photo-text">
         <p>I grew up watching people build remarkable things from almost nothing.</p>
-        <p>In Baghdad, under sanctions that cut off supply chains and starved manufacturers of materials, ordinary people engineered extraordinary solutions — not because they were exceptional, but because necessity left no other option. That spirit of <strong>practical innovation</strong> shaped everything I do.</p>
+        <p>In Baghdad, under sanctions that cut off supply chains and starved manufacturers of materials, ordinary people engineered extraordinary solutions — not because they were exceptional, but because they had to.</p>
         <blockquote>"Purpose means adding real value — something I genuinely believe in. Not just chasing quick trends."</blockquote>
-        <p>I moved to New Zealand and spent <strong>20+ years engineering hardware products</strong> that shipped globally. Battery management systems for Yamaha. Marine electronics for NAVICO. Storage systems for Sistema Plastics at a $2M budget. A portable speaker selected by Sony USA that sold 50,000 units in its first year.</p>
-        <p>I hold <strong>7 patents</strong> and won the NZ Plastics Industry Gold Prize in 2004. I am not a designer who hands over pretty renders. I am an engineer who understands what happens when the design hits the production floor — and I design accordingly.</p>
+        <p>I moved to New Zealand and spent <strong>20+ years engineering hardware products</strong> that shipped globally. Battery management systems for Yamaha. Marine electronics for NAVICO. Storage solutions for major retailers.</p>
+        <p>I hold <strong>7 patents</strong> and won the NZ Plastics Industry Gold Prize in 2004. I am not a designer who hands over pretty renders. I am an engineer who understands what happens when prototypes meet production.</p>
       </div>
     </div>
   </div>
