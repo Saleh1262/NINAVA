@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — NINAVA Studio</title>
+<title>Work With Me — NINAVA Studio</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -29,43 +29,62 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
 .section-alt{background:var(--bg2)}
 .s-eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1rem;display:block}
 .s-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
+.s-h2 em{color:var(--bronze);font-style:normal}
 
 /* HERO */
 .hero{padding:5rem var(--pad) 4rem;max-width:860px}
 .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,8rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
 .hero-h1 em{color:var(--bronze);font-style:normal;display:block}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:520px;line-height:1.9}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.9}
 
-/* SECTION LABEL */
-.sec-label{padding:2.5rem var(--pad) 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.sec-label-title{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.08em;color:var(--cream)}
-.sec-label-tag{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze2);padding:3px 10px}
-
-/* GRID */
-.grid{padding:0 var(--pad) 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1px;background:var(--rule)}
-.project{background:var(--bg2);display:flex;flex-direction:column;transition:background .2s}
-.project:hover{background:var(--bg3)}
-.proj-img{width:100%;height:260px;overflow:hidden;background:var(--bg3);flex-shrink:0}
-.proj-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s ease}
-.project:hover .proj-img img{transform:scale(1.04)}
-.proj-body{padding:1.75rem;display:flex;flex-direction:column;flex:1}
-.proj-num{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.5rem}
-.proj-company{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:.35rem}
-.proj-title{font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.35}
-.proj-desc{font-size:.85rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;flex:1}
-.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1rem}
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule)}
+.service{background:var(--bg2);padding:2.5rem 2rem;display:flex;flex-direction:column;transition:background .2s}
+.service:hover{background:var(--bg3)}
+.service-num{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.75rem}
+.service-title{font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.3}
+.service-desc{font-size:.85rem;color:var(--muted);line-height:1.8;flex:1;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1.25rem}
 .tag{font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:2px 8px}
 .tag.hl{color:var(--bronze);border-color:var(--bronze2)}
-.proj-stats{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--rule);flex-wrap:wrap}
-.ps-val{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--bronze);display:block;line-height:1}
-.ps-label{font-size:.62rem;color:var(--dim);letter-spacing:.05em}
+.price-block{padding-top:1.25rem;border-top:1px solid var(--rule);margin-top:auto}
+.price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.2rem}
+.price-note{font-size:.68rem;color:var(--dim);letter-spacing:.05em}
 
-/* CTA */
-.cta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
-.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);line-height:.95;color:var(--cream);margin-bottom:.5rem}
-.cta p{font-size:.95rem;color:var(--muted)}
-.cta-btn{background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s;white-space:nowrap}
-.cta-btn:hover{background:var(--bronze2)}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;margin-top:3rem}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--bronze);opacity:.25;line-height:1;margin-bottom:.5rem}
+.step-title{font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.4rem}
+.step-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
+
+/* CREDS */
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule)}
+.cred{background:var(--bg2);padding:2rem 1.75rem}
+.cred-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.3rem}
+.cred-label{font-size:.75rem;color:var(--muted);line-height:1.5}
+
+/* BOOKING */
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.booking-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:.95;color:var(--cream);margin-bottom:1rem}
+.booking-left p{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem}
+.cal-btns{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.cal-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:1.1rem 1.75rem;text-decoration:none;transition:background .2s}
+.cal-btn:hover{background:var(--bronze2)}
+.cal-btn-outline{background:transparent;color:var(--bronze);border:1px solid var(--bronze2)}
+.cal-btn-outline:hover{background:var(--bronze);color:var(--bg)}
+.or-divider{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:1.5rem 0;display:flex;align-items:center;gap:1rem}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--rule)}
+
+/* FORM */
+.field{margin-bottom:1.25rem}
+.field label{display:block;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin-bottom:.5rem}
+.field input,.field select,.field textarea{width:100%;background:var(--bg2);border:1px solid var(--rule);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;padding:.85rem 1rem;outline:none;transition:border-color .3s;border-radius:0;-webkit-appearance:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--bronze)}
+.field textarea{min-height:110px;resize:vertical}
+.field select option{background:var(--bg2)}
+.submit-btn{background:var(--bronze);color:var(--bg);border:none;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:1rem 2rem;cursor:pointer;transition:background .2s;width:100%}
+.submit-btn:hover{background:var(--bronze2)}
+.form-success{display:none;background:var(--bg3);border:1px solid var(--bronze2);padding:1.25rem;margin-top:1rem;font-size:.9rem;color:var(--muted)}
 
 /* FOOTER */
 .footer{padding:2.5rem var(--pad);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
@@ -79,9 +98,9 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-hamburger{display:flex}
-  .grid{grid-template-columns:1fr;padding-left:0;padding-right:0}
-  .sec-label{padding-left:var(--pad);padding-right:var(--pad)}
-  .cta{flex-direction:column;align-items:flex-start}
+  .services{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .booking-wrap{grid-template-columns:1fr}
   .footer{flex-direction:column;align-items:flex-start}
   .footer-right{text-align:left}
 }
@@ -92,15 +111,15 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
   <a href="index.html" class="nav-logo">NINAVA</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-    <li><a href="work-with-me.html">Work with me</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="work-with-me.html" class="active">Work with me</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <a href="work-with-me.html" class="nav-cta">Start a project</a>
+  <a href="#booking" class="nav-cta">Book a call</a>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
@@ -112,109 +131,111 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
 
 <div class="page">
   <div class="hero">
-    <span class="s-eyebrow">Saleh Ghiyath — Portfolio</span>
-    <h1 class="hero-h1">20 years.<br><em>Real results.</em></h1>
-    <p class="hero-sub">Product design engineer based in Auckland. From concept sketch to production line — shipped hardware for global brands.</p>
+    <span class="s-eyebrow">Engage the Studio — Saleh Ghiyath</span>
+    <h1 class="hero-h1">Start a<em>project.</em></h1>
+    <p class="hero-sub">20+ years taking hardware products from concept to production. I work with manufacturers, startups, and product companies who need real mechanical and product design engineering.</p>
   </div>
 
   <div class="s-rule"></div>
 
-  <div class="sec-label"><div class="sec-label-title">Engineering work</div><div class="sec-label-tag">For consulting clients</div></div>
-  <div class="grid">
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/NAVICO_1.jpg?v=1779345574" alt="NAVICO marine electronics"></div>
-      <div class="proj-body">
-        <div class="proj-num">01</div><div class="proj-company">NAVICO — Simrad · Lowrance</div>
-        <div class="proj-title">Marine Electronics Enclosures</div>
-        <div class="proj-desc">Led mechanical design for rugged marine electronics including Simrad S2009/16, OP50, and Lowrance Hook2. Full DFM/DFA, IPX6/7 rated enclosures. Production trials in Mexico.</div>
-        <div class="proj-tags"><span class="tag hl">SolidWorks</span><span class="tag hl">DFM / DFA</span><span class="tag">IPX6/7</span><span class="tag">FMEA</span></div>
-        <div class="proj-stats"><div><span class="ps-val">5 yrs</span><span class="ps-label">Tenure</span></div><div><span class="ps-val">Global</span><span class="ps-label">Distribution</span></div></div>
+  <section class="section" style="padding-top:0;padding-bottom:0">
+    <div class="services">
+      <div class="service">
+        <div class="service-num">01</div>
+        <div class="service-title">Product Design &amp; CAD</div>
+        <div class="service-desc">Full product development from concept to production-ready CAD. SolidWorks and Creo. DFM/DFA built in. Deliverables: native CAD, STEP, engineering drawings, photorealistic renders.</div>
+        <div class="tags"><span class="tag hl">SolidWorks</span><span class="tag hl">DFM / DFA</span><span class="tag">Creo</span><span class="tag">Eng. drawings</span></div>
+        <div class="price-block"><span class="price">$5,000–$25,000</span><span class="price-note">NZD per project</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">02</div>
+        <div class="service-title">3D Visualisation &amp; Rendering</div>
+        <div class="service-desc">Photorealistic product renders for marketing, investor pitches, or patent applications. 1–5 day turnaround. Multiple colourways and hero shots ready for web or print.</div>
+        <div class="tags"><span class="tag hl">3D Rendering</span><span class="tag hl">SolidWorks</span><span class="tag">Multiple colourways</span></div>
+        <div class="price-block"><span class="price">$500–$2,500</span><span class="price-note">NZD per scene set</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">03</div>
+        <div class="service-title">DFM Review &amp; Audit</div>
+        <div class="service-desc">Review your existing design for manufacturability issues before tooling. Written report with recommended changes. Catch problems before they cost you money.</div>
+        <div class="tags"><span class="tag hl">DFM audit</span><span class="tag hl">FMEA</span><span class="tag">Written report</span><span class="tag">Tooling advice</span></div>
+        <div class="price-block"><span class="price">$1,500–$4,000</span><span class="price-note">NZD per review</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">04</div>
+        <div class="service-title">Studio Retainer</div>
+        <div class="service-desc">Ongoing mechanical and product design engineering support. For hardware companies that need consistent engineering input without a full-time hire.</div>
+        <div class="tags"><span class="tag hl">Embedded support</span><span class="tag hl">Mechanical eng.</span><span class="tag">NZ &amp; International</span></div>
+        <div class="price-block"><span class="price">$3,000–$6,000</span><span class="price-note">NZD per month</span></div>
       </div>
     </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/bep.jpg?v=1779345416" alt="BEP Marine Smart Battery Hub"></div>
-      <div class="proj-body">
-        <div class="proj-num">02</div><div class="proj-company">BEP Marine / ASG by Brunswick</div>
-        <div class="proj-title">Smart Battery Hub</div>
-        <div class="proj-desc">Led mechanical design — 300amp power surge, IPX5/6/7, vibration, chemical resistance, 80°C thermal validation. Production line setup in Juarez, Mexico.</div>
-        <div class="proj-tags"><span class="tag hl">FEA</span><span class="tag hl">Engineering plastics</span><span class="tag">IPX7</span><span class="tag">Thermal validation</span></div>
-        <div class="proj-stats"><div><span class="ps-val">300A</span><span class="ps-label">Power surge tested</span></div><div><span class="ps-val">IPX7</span><span class="ps-label">Rated</span></div></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/SISTEMA_1.jpg?v=1779345588" alt="Sistema Plastics storage range"></div>
-      <div class="proj-body">
-        <div class="proj-num">03</div><div class="proj-company">Sistema Plastics</div>
-        <div class="proj-title">Large Format Storage Range</div>
-        <div class="proj-desc">Product Design Manager for a $2M USD storage bin development program. Full range design, 21 tools made, 7 patents granted, delivered in 12 months.</div>
-        <div class="proj-tags"><span class="tag hl">Rotational moulding</span><span class="tag hl">$2M budget</span><span class="tag">7 patents</span><span class="tag">DFM</span></div>
-        <div class="proj-stats"><div><span class="ps-val">$2M</span><span class="ps-label">Budget managed</span></div><div><span class="ps-val">7</span><span class="ps-label">Patents granted</span></div></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/f_AND_p_2.jpg?v=1779345531" alt="Fisher and Paykel refrigeration"></div>
-      <div class="proj-body">
-        <div class="proj-num">04</div><div class="proj-company">Fisher &amp; Paykel Appliances</div>
-        <div class="proj-title">Refrigeration Storage Systems</div>
-        <div class="proj-desc">Product development in Storage Systems Refrigeration. Design, warranty resolution, cost reduction. Toyota LFPD and LAMDA process discipline.</div>
-        <div class="proj-tags"><span class="tag hl">Toyota LFPD</span><span class="tag hl">UL standards</span><span class="tag">DVP</span><span class="tag">6 Sigma</span></div>
-        <div class="proj-stats"><div><span class="ps-val">4 yrs</span><span class="ps-label">Tenure</span></div><div><span class="ps-val">Global</span><span class="ps-label">Product reach</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="s-rule"></div>
-
-  <div class="sec-label"><div class="sec-label-title">Design work</div><div class="sec-label-tag">For NINAVA customers</div></div>
-  <div class="grid">
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_1.jpg?v=1779345631" alt="Sony Galaxy speaker system"></div>
-      <div class="proj-body">
-        <div class="proj-num">05</div><div class="proj-company">Slab International — Sony USA</div>
-        <div class="proj-title">Galaxy Speaker System — Sony</div>
-        <div class="proj-desc">Designed the Galaxy multi-mini sound system — selected by Sony USA for global distribution. Chosen from hundreds of concepts pitched to Sony's product team.</div>
-        <div class="proj-tags"><span class="tag hl">Selected by Sony USA</span><span class="tag hl">SolidWorks</span><span class="tag">Consumer electronics</span></div>
-        <div class="proj-stats"><div><span class="ps-val">Sony</span><span class="ps-label">Selected by</span></div><div><span class="ps-val">$5M+</span><span class="ps-label">Est. revenue</span></div></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_3.jpg?v=1779567917" alt="Maxell Galaxy 2.1"></div>
-      <div class="proj-body">
-        <div class="proj-num">06</div><div class="proj-company">Slab International — Maxell</div>
-        <div class="proj-title">Galaxy Speaker System — Maxell</div>
-        <div class="proj-desc">The Maxell-branded 2.1 multimedia variant. Sold 50,000 units in its first year. Designed for mass market production while keeping the premium aesthetic.</div>
-        <div class="proj-tags"><span class="tag hl">Maxell 2.1</span><span class="tag hl">Mass production</span><span class="tag">High volume DFM</span></div>
-        <div class="proj-stats"><div><span class="ps-val">50k</span><span class="ps-label">Units sold yr 1</span></div><div><span class="ps-val">$5M+</span><span class="ps-label">Est. revenue</span></div></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Cablemate_1.jpg?v=1779345452" alt="cableMATE elevator tool"></div>
-      <div class="proj-body">
-        <div class="proj-num">07</div><div class="proj-company">Unitec NZ — NZ Plastics Gold Prize 2004</div>
-        <div class="proj-title">cableMATE — Elevator Maintenance Tool</div>
-        <div class="proj-desc">Award-winning graduate project. Portable device for measuring elevator cable tension via non-contact sensor technology. Fully prototyped and tested in real lift shafts.</div>
-        <div class="proj-tags"><span class="tag hl">NZ Plastics Gold Prize</span><span class="tag">ABS moulding</span><span class="tag">Sensor integration</span></div>
-        <div class="proj-stats"><div><span class="ps-val">Gold</span><span class="ps-label">NZ Plastics Prize 2004</span></div></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Channel_Vision_2.jpg?v=1779345511" alt="Channel Vision docking stations"></div>
-      <div class="proj-body">
-        <div class="proj-num">08</div><div class="proj-company">Channel Vision USA</div>
-        <div class="proj-title">iPad / iPod In-Wall Docking Stations</div>
-        <div class="proj-desc">Designed in-wall and surface-mount docking stations for iPad and iPod. Convinced the US client to manufacture in New Zealand through Morrow Industries.</div>
-        <div class="proj-tags"><span class="tag hl">Made in NZ</span><span class="tag hl">Consumer electronics</span><span class="tag">Industrial design</span></div>
-        <div class="proj-stats"><div><span class="ps-val">NZ</span><span class="ps-label">Manufactured locally</span></div><div><span class="ps-val">USA</span><span class="ps-label">Client market</span></div></div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <div class="s-rule"></div>
 
   <section class="section section-alt">
-    <div class="cta">
-      <div><h2>Work with me.</h2><p>Available for consulting — NZ, AU, and international remote.</p></div>
-      <a href="work-with-me.html" class="cta-btn">Start a project &rarr;</a>
+    <span class="s-eyebrow">Process</span>
+    <h2 class="s-h2">How it works.</h2>
+    <div class="steps">
+      <div><div class="step-num">01</div><div class="step-title">Get in touch</div><div class="step-desc">Book a call or fill in the form below. I respond within 24 hours.</div></div>
+      <div><div class="step-num">02</div><div class="step-title">Discovery call</div><div class="step-desc">30–60 minutes to understand your brief and confirm I'm the right fit.</div></div>
+      <div><div class="step-num">03</div><div class="step-title">Proposal</div><div class="step-desc">Clear scope, deliverables, timeline, and fixed price. No hourly surprises.</div></div>
+      <div><div class="step-num">04</div><div class="step-title">We get to work</div><div class="step-desc">50% deposit to start. Regular updates. Final files on completion.</div></div>
+    </div>
+  </section>
+
+  <div class="s-rule"></div>
+
+  <section class="section">
+    <span class="s-eyebrow">Why work with me</span>
+    <h2 class="s-h2">The track record.</h2>
+    <div class="creds" style="margin-top:3rem">
+      <div class="cred"><span class="cred-val">20+</span><span class="cred-label">Years engineering real hardware products</span></div>
+      <div class="cred"><span class="cred-val">7</span><span class="cred-label">Patents granted across multiple categories</span></div>
+      <div class="cred"><span class="cred-val">$2M</span><span class="cred-label">Budget managed at Sistema Plastics</span></div>
+      <div class="cred"><span class="cred-val">50k</span><span class="cred-label">Units sold — Maxell speaker, year one</span></div>
+      <div class="cred"><span class="cred-val">Sony</span><span class="cred-label">Product selected by Sony USA</span></div>
+      <div class="cred"><span class="cred-val">Gold</span><span class="cred-label">NZ Plastics Industry Prize 2004</span></div>
+    </div>
+  </section>
+
+  <div class="s-rule"></div>
+
+  <section class="section section-alt" id="booking">
+    <div class="booking-wrap">
+      <div class="booking-left">
+        <span class="s-eyebrow">Book a call</span>
+        <h2>Let's talk about<em style="color:var(--bronze);font-style:normal;display:block">your project.</em></h2>
+        <p>Start with a discovery call. Bring your brief, a problem to solve, or just an idea. No commitment required.</p>
+        <div class="cal-btns">
+          <a href="https://calendly.com/saleh-ghiyath/60min" target="_blank" class="cal-btn">Book a 60-min call &nbsp;&rarr;</a>
+          <a href="https://calendly.com/saleh-ghiyath/30min" target="_blank" class="cal-btn cal-btn-outline">Quick 30-min intro &nbsp;&rarr;</a>
+        </div>
+        <div style="font-size:.82rem;color:var(--muted);line-height:1.8">
+          <a href="mailto:saleh@ninava.co.nz" style="color:var(--muted);text-decoration:none">saleh@ninava.co.nz</a><br>
+          <a href="tel:+64211262516" style="color:var(--muted);text-decoration:none">+64 21 126 2516</a><br>
+          Auckland, NZ &nbsp;·&nbsp; Available NZ, AU &amp; International
+        </div>
+      </div>
+      <div>
+        <div class="or-divider">Or send a message</div>
+        <div class="field"><label>Your name</label><input type="text" id="f-name" placeholder="John Smith"></div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" placeholder="john@company.com"></div>
+        <div class="field"><label>Company</label><input type="text" id="f-company" placeholder="Your company"></div>
+        <div class="field"><label>Service needed</label>
+          <select id="f-service">
+            <option value="">Select a service</option>
+            <option>Product Design &amp; CAD</option>
+            <option>3D Visualisation &amp; Rendering</option>
+            <option>DFM Review &amp; Audit</option>
+            <option>Studio Retainer</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell me about your project</label><textarea id="f-msg" placeholder="What are you building? What's your timeline?"></textarea></div>
+        <button class="submit-btn" onclick="sendEnquiry()">Send enquiry &rarr;</button>
+        <div class="form-success" id="f-success"><strong>Message received.</strong> I'll be in touch within 24 hours.</div>
+      </div>
     </div>
   </section>
 
@@ -226,5 +247,22 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
     </div>
   </footer>
 </div>
+
+<script>
+function sendEnquiry(){
+  var n=document.getElementById('f-name').value;
+  var e=document.getElementById('f-email').value;
+  var m=document.getElementById('f-msg').value;
+  if(!n||!e||!m){alert('Please fill in your name, email, and project details.');return;}
+  var s=encodeURIComponent('NINAVA Studio Enquiry — '+n);
+  var b=encodeURIComponent('Name: '+n+'\nEmail: '+e+'\nCompany: '+document.getElementById('f-company').value+'\nService: '+document.getElementById('f-service').value+'\n\nProject details:\n'+m);
+  window.location.href='mailto:saleh@ninava.co.nz?subject='+s+'&body='+b;
+  document.getElementById('f-success').style.display='block';
+}
+
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+</script>
 </body>
 </html>
