@@ -17,6 +17,12 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
 .nav-links a:hover,.nav-links a.active{color:var(--cream)}
 .nav-cta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--bronze);padding:.55rem 1.25rem;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--bronze2)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--cream)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(22,18,16,0.98);padding:2rem var(--pad);flex-direction:column;gap:1.5rem;z-index:99;border-bottom:1px solid var(--rule)}
+.mobile-menu a{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.mobile-menu a:hover{color:var(--cream)}
+.mobile-menu.open{display:flex}
 .page{padding-top:64px}
 .s-rule{height:1px;background:var(--rule);margin:0 var(--pad)}
 .section{padding:6rem var(--pad)}
@@ -73,6 +79,8 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
 @media(max-width:900px){
   :root{--pad:2rem}
   .nav-links{display:none}
+  .nav-cta{display:none}
+  .nav-hamburger{display:flex}
   .profile{grid-template-columns:1fr}
   .profile-img{max-width:280px}
   .stats{grid-template-columns:1fr 1fr 1fr}
@@ -92,8 +100,19 @@ body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;fo
     <li><a href="work-with-me.html">Work with me</a></li>
     <li><a href="about.html" class="active">About</a></li>
   </ul>
+  
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <a href="work-with-me.html" class="nav-cta">Start a project</a>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="work-with-me.html">Work with me</a>
+  <a href="about.html">About</a>
+</div>
 
 <div class="page">
   <div class="hero">
