@@ -3,234 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Saleh Ghiyath</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Portfolio — NINAVA Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#1C1510;--bg2:#231a13;--bg3:#2a1f16;--cream:#F5EEE4;--bronze:#D4995A;--bronze2:#a06e38;--muted:#D0BFA8;--dim:#8a7060;--rule:#3a2f24}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:clip}
-#wrap{background:var(--bg);min-height:100vh;padding-top:64px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#161210;--bg2:#1e1814;--bg3:#261e16;--cream:#F2EAD8;--bronze:#C8894A;--bronze2:#9a6530;--muted:#B8A88A;--dim:#6a5a48;--rule:#2e2418;--pad:5rem}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(22,18,16,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.18em;color:var(--cream);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--bronze);padding:.55rem 1.25rem;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--bronze2)}
+.page{padding-top:64px}
+.s-rule{height:1px;background:var(--rule);margin:0 var(--pad)}
+.section{padding:6rem var(--pad)}
+.section-alt{background:var(--bg2)}
+.s-eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1rem;display:block}
+.s-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
 
+/* HERO */
+.hero{padding:5rem var(--pad) 4rem;max-width:860px}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,8rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
+.hero-h1 em{color:var(--bronze);font-style:normal;display:block}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:520px;line-height:1.9}
 
-.hero{padding:3rem 5rem 2rem;max-width:860px}
-.eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.25rem;display:block}
-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;color:var(--cream);margin-bottom:1.25rem}
-h1 .a{color:var(--bronze)}
-.hero p{font-size:1rem;color:var(--muted);max-width:500px;line-height:1.8}
-.rule{width:calc(100% - 10rem);margin:0 5rem;height:1px;background:var(--rule)}
-.sec{padding:3.5rem 5rem 1.75rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.08em;color:var(--cream)}
-.sec-tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze);padding:3px 11px;border-radius:2px}
-.grid{padding:0 5rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--rule)}
+/* SECTION LABEL */
+.sec-label{padding:2.5rem var(--pad) 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.sec-label-title{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.08em;color:var(--cream)}
+.sec-label-tag{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze2);padding:3px 10px}
+
+/* GRID */
+.grid{padding:0 var(--pad) 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1px;background:var(--rule)}
 .project{background:var(--bg2);display:flex;flex-direction:column;transition:background .2s}
 .project:hover{background:var(--bg3)}
-.img-box{width:100%;height:260px;overflow:hidden;background:var(--bg3);flex-shrink:0;position:relative}
-.img-box img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s ease}
-.project:hover .img-box img{transform:scale(1.04)}
-.body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
-.num{font-family:'Bebas Neue',sans-serif;font-size:.75rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.6rem}
-.company{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:.4rem}
-.title{font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.3}
-.desc{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
-.tag{font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:2px 9px;border-radius:2px}
+.proj-img{width:100%;height:260px;overflow:hidden;background:var(--bg3);flex-shrink:0}
+.proj-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s ease}
+.project:hover .proj-img img{transform:scale(1.04)}
+.proj-body{padding:1.75rem;display:flex;flex-direction:column;flex:1}
+.proj-num{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.5rem}
+.proj-company{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:.35rem}
+.proj-title{font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.35}
+.proj-desc{font-size:.85rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1rem}
+.tag{font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:2px 8px}
 .tag.hl{color:var(--bronze);border-color:var(--bronze2)}
-.stats{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--rule);flex-wrap:wrap}
-.sv{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--bronze);display:block;line-height:1}
-.sl{font-size:.68rem;color:var(--dim);letter-spacing:.05em}
-.cta{padding:4rem 5rem;background:var(--bg2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid var(--rule)}
-.cta h2{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--cream);line-height:1;margin-bottom:.4rem}
+.proj-stats{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--rule);flex-wrap:wrap}
+.ps-val{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--bronze);display:block;line-height:1}
+.ps-label{font-size:.62rem;color:var(--dim);letter-spacing:.05em}
+
+/* CTA */
+.cta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);line-height:.95;color:var(--cream);margin-bottom:.5rem}
 .cta p{font-size:.95rem;color:var(--muted)}
-.cta-btn{padding:.9rem 1.8rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;white-space:nowrap}
+.cta-btn{background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s;white-space:nowrap}
 .cta-btn:hover{background:var(--bronze2)}
-footer{padding:1.75rem 5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--dim);flex-wrap:wrap;gap:.75rem}
-@media(max-width:768px){
-  
-  
-  
-  
-  .hero{padding:5.5rem 1.5rem 3rem}
-  h1{font-size:clamp(2rem,13vw,3.5rem)}
-  .rule{width:calc(100% - 3rem);margin:0 1.5rem}
-  .sec{padding:2.5rem 1.5rem 1.25rem}
-  .grid{padding:0 0 3rem;grid-template-columns:1fr}
-  .img-box{height:auto;overflow:visible}
-  .img-box img{height:auto;width:100%;object-fit:contain;aspect-ratio:unset;display:block}
-  .stats{gap:1rem;flex-wrap:wrap}
-  .cta{padding:2.5rem 1.5rem;flex-direction:column;align-items:flex-start}
-  footer{padding:1.5rem;flex-direction:column;gap:.5rem}
+
+/* FOOTER */
+.footer{padding:2.5rem var(--pad);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.18em;color:var(--dim)}
+.footer-right{font-size:.78rem;color:var(--muted);text-align:right;line-height:1.8}
+.footer-right a{color:var(--muted);text-decoration:none}
+.footer-right a:hover{color:var(--bronze)}
+
+@media(max-width:900px){
+  :root{--pad:2rem}
+  .nav-links{display:none}
+  .grid{grid-template-columns:1fr;padding-left:0;padding-right:0}
+  .sec-label{padding-left:var(--pad);padding-right:var(--pad)}
+  .cta{flex-direction:column;align-items:flex-start}
+  .footer{flex-direction:column;align-items:flex-start}
+  .footer-right{text-align:left}
 }
-  
-  
-  
-
-  
-
-  /* FIXED HEADER */
-  .n-header{position:fixed;top:0;left:0;right:0;z-index:10000;height:64px;background:#1C1510;border-bottom:1px solid #3a2f24;display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
-  .n-header-logo{font-family:'DM Sans',sans-serif;font-size:1.4rem;letter-spacing:.4em;color:#D4995A;font-weight:400;text-transform:uppercase;border-bottom:1.5px solid #D4995A;padding-bottom:4px;text-decoration:none;white-space:nowrap}
-  .n-header-nav{display:flex;gap:2rem;align-items:center}
-  .n-header-nav a{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,238,228,.55);text-decoration:none;transition:color .2s;font-weight:400;white-space:nowrap}
-  .n-header-nav a:hover{color:#F5EEE4}
-  .n-ham{display:none;background:#1C1510;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;border-radius:4px}
-  .n-ham span{display:block;width:22px;height:2px;background:#F5EEE4;transition:all .3s ease}
-  .n-overlay{display:none;position:fixed;inset:0;background:#1C1510;z-index:10001;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3rem}
-  .n-overlay a{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;color:#F5EEE4;text-decoration:none;display:block;margin-bottom:.85rem;opacity:.7;transition:opacity .2s,color .2s;white-space:nowrap}
-  .n-overlay a:hover{opacity:1;color:#D4995A}
-  .n-overlay-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;cursor:pointer;color:#F5EEE4;font-size:2rem;line-height:1;padding:8px}
-  @media(max-width:768px){.n-header{padding:0 1.5rem}.n-header-nav{display:none}.n-ham{display:flex}}
 </style>
 </head>
 <body>
-<header class="n-header">
-  <a href="/index.html" class="n-header-logo">NINAVA</a>
-  <nav class="n-header-nav">
-    <a href="/index.html">Home</a>
-    <a href="/portfolio.html">Portfolio</a>
-    <a href="/work-with-me.html">Work with me</a>
-    <a href="/about.html">About</a>
-  </nav>
-  <button class="n-ham" onclick="document.getElementById('nOverlay').style.display='flex'" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-<div class="n-overlay" id="nOverlay">
-  <button class="n-overlay-close" onclick="document.getElementById('nOverlay').style.display='none'" aria-label="Close">✕</button>
-  <a href="/index.html" onclick="document.getElementById('nOverlay').style.display='none'">Home</a>
-  <a href="/portfolio.html" onclick="document.getElementById('nOverlay').style.display='none'">Portfolio</a>
-  <a href="/work-with-me.html" onclick="document.getElementById('nOverlay').style.display='none'">Work with me</a>
-  <a href="/about.html" onclick="document.getElementById('nOverlay').style.display='none'">About</a>
-</div>
-  <div id="wrap">
+<nav class="nav">
+  <a href="index.html" class="nav-logo">NINAVA</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="work-with-me.html">Work with me</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="work-with-me.html" class="nav-cta">Start a project</a>
+</nav>
 
-<div class="hero">
-  <span class="eyebrow">Saleh Ghiyath — Portfolio</span>
-  <h1>20 years.<br><span class="a">Real products.</span><br>Real results.</h1>
-  <p>Product design engineer based in Auckland, New Zealand. From concept sketch to production line — shipped hardware for global brands and built products that sold in the millions.</p>
-</div>
+<div class="page">
+  <div class="hero">
+    <span class="s-eyebrow">Saleh Ghiyath — Portfolio</span>
+    <h1 class="hero-h1">20 years.<br><em>Real results.</em></h1>
+    <p class="hero-sub">Product design engineer based in Auckland. From concept sketch to production line — shipped hardware for global brands.</p>
+  </div>
 
-<div class="rule"></div>
+  <div class="s-rule"></div>
 
-<div class="sec"><div class="sec-title">Engineering work</div><div class="sec-tag">For consulting clients</div></div>
-<div class="grid">
-
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/NAVICO_1.jpg?v=1779345574" alt="NAVICO marine electronics"></div>
-    <div class="body">
-      <div class="num">01</div>
-      <div class="company">NAVICO — Simrad · Lowrance</div>
-      <div class="title">Marine Electronics Enclosures</div>
-      <div class="desc">Led mechanical design for rugged marine electronics including the Simrad S2009/16, OP50, and Lowrance Hook2. Full DFM/DFA, IPX6/7 rated enclosures, cross-functional team leadership. Production trials in Mexico.</div>
-      <div class="tags"><span class="tag hl">SolidWorks</span><span class="tag hl">DFM / DFA</span><span class="tag">IPX6/7</span><span class="tag">FMEA</span><span class="tag">Vendor assessment</span></div>
-      <div class="stats"><div><span class="sv">5 yrs</span><span class="sl">Tenure</span></div><div><span class="sv">Global</span><span class="sl">Distribution</span></div></div>
+  <div class="sec-label"><div class="sec-label-title">Engineering work</div><div class="sec-label-tag">For consulting clients</div></div>
+  <div class="grid">
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/NAVICO_1.jpg?v=1779345574" alt="NAVICO marine electronics"></div>
+      <div class="proj-body">
+        <div class="proj-num">01</div><div class="proj-company">NAVICO — Simrad · Lowrance</div>
+        <div class="proj-title">Marine Electronics Enclosures</div>
+        <div class="proj-desc">Led mechanical design for rugged marine electronics including Simrad S2009/16, OP50, and Lowrance Hook2. Full DFM/DFA, IPX6/7 rated enclosures. Production trials in Mexico.</div>
+        <div class="proj-tags"><span class="tag hl">SolidWorks</span><span class="tag hl">DFM / DFA</span><span class="tag">IPX6/7</span><span class="tag">FMEA</span></div>
+        <div class="proj-stats"><div><span class="ps-val">5 yrs</span><span class="ps-label">Tenure</span></div><div><span class="ps-val">Global</span><span class="ps-label">Distribution</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/bep.jpg?v=1779345416" alt="BEP Marine Smart Battery Hub"></div>
+      <div class="proj-body">
+        <div class="proj-num">02</div><div class="proj-company">BEP Marine / ASG by Brunswick</div>
+        <div class="proj-title">Smart Battery Hub</div>
+        <div class="proj-desc">Led mechanical design — 300amp power surge, IPX5/6/7, vibration, chemical resistance, 80°C thermal validation. Production line setup in Juarez, Mexico.</div>
+        <div class="proj-tags"><span class="tag hl">FEA</span><span class="tag hl">Engineering plastics</span><span class="tag">IPX7</span><span class="tag">Thermal validation</span></div>
+        <div class="proj-stats"><div><span class="ps-val">300A</span><span class="ps-label">Power surge tested</span></div><div><span class="ps-val">IPX7</span><span class="ps-label">Rated</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/SISTEMA_1.jpg?v=1779345588" alt="Sistema Plastics storage range"></div>
+      <div class="proj-body">
+        <div class="proj-num">03</div><div class="proj-company">Sistema Plastics</div>
+        <div class="proj-title">Large Format Storage Range</div>
+        <div class="proj-desc">Product Design Manager for a $2M USD storage bin development program. Full range design, 21 tools made, 7 patents granted, delivered in 12 months.</div>
+        <div class="proj-tags"><span class="tag hl">Rotational moulding</span><span class="tag hl">$2M budget</span><span class="tag">7 patents</span><span class="tag">DFM</span></div>
+        <div class="proj-stats"><div><span class="ps-val">$2M</span><span class="ps-label">Budget managed</span></div><div><span class="ps-val">7</span><span class="ps-label">Patents granted</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/f_AND_p_2.jpg?v=1779345531" alt="Fisher and Paykel refrigeration"></div>
+      <div class="proj-body">
+        <div class="proj-num">04</div><div class="proj-company">Fisher &amp; Paykel Appliances</div>
+        <div class="proj-title">Refrigeration Storage Systems</div>
+        <div class="proj-desc">Product development in Storage Systems Refrigeration. Design, warranty resolution, cost reduction. Toyota LFPD and LAMDA process discipline.</div>
+        <div class="proj-tags"><span class="tag hl">Toyota LFPD</span><span class="tag hl">UL standards</span><span class="tag">DVP</span><span class="tag">6 Sigma</span></div>
+        <div class="proj-stats"><div><span class="ps-val">4 yrs</span><span class="ps-label">Tenure</span></div><div><span class="ps-val">Global</span><span class="ps-label">Product reach</span></div></div>
+      </div>
     </div>
   </div>
 
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/bep.jpg?v=1779786448" alt="BEP Marine Smart Battery Hub"></div>
-    <div class="body">
-      <div class="num">02</div>
-      <div class="company">BEP Marine / ASG by Brunswick</div>
-      <div class="title">Smart Battery Hub</div>
-      <div class="desc">Led mechanical design for the Smart Battery Hub — complex electronic enclosure with 300amp power surge, IPX5/6/7, vibration, chemical resistance, and 80°C thermal validation. Production line setup in Juarez, Mexico.</div>
-      <div class="tags"><span class="tag hl">FEA</span><span class="tag hl">Engineering plastics</span><span class="tag">Thermal validation</span><span class="tag">IPX7</span><span class="tag">Production setup</span></div>
-      <div class="stats"><div><span class="sv">300A</span><span class="sl">Power surge tested</span></div><div><span class="sv">IPX7</span><span class="sl">Rated</span></div></div>
+  <div class="s-rule"></div>
+
+  <div class="sec-label"><div class="sec-label-title">Design work</div><div class="sec-label-tag">For NINAVA customers</div></div>
+  <div class="grid">
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_1.jpg?v=1779345631" alt="Sony Galaxy speaker system"></div>
+      <div class="proj-body">
+        <div class="proj-num">05</div><div class="proj-company">Slab International — Sony USA</div>
+        <div class="proj-title">Galaxy Speaker System — Sony</div>
+        <div class="proj-desc">Designed the Galaxy multi-mini sound system — selected by Sony USA for global distribution. Chosen from hundreds of concepts pitched to Sony's product team.</div>
+        <div class="proj-tags"><span class="tag hl">Selected by Sony USA</span><span class="tag hl">SolidWorks</span><span class="tag">Consumer electronics</span></div>
+        <div class="proj-stats"><div><span class="ps-val">Sony</span><span class="ps-label">Selected by</span></div><div><span class="ps-val">$5M+</span><span class="ps-label">Est. revenue</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_3.jpg?v=1779567917" alt="Maxell Galaxy 2.1"></div>
+      <div class="proj-body">
+        <div class="proj-num">06</div><div class="proj-company">Slab International — Maxell</div>
+        <div class="proj-title">Galaxy Speaker System — Maxell</div>
+        <div class="proj-desc">The Maxell-branded 2.1 multimedia variant. Sold 50,000 units in its first year. Designed for mass market production while keeping the premium aesthetic.</div>
+        <div class="proj-tags"><span class="tag hl">Maxell 2.1</span><span class="tag hl">Mass production</span><span class="tag">High volume DFM</span></div>
+        <div class="proj-stats"><div><span class="ps-val">50k</span><span class="ps-label">Units sold yr 1</span></div><div><span class="ps-val">$5M+</span><span class="ps-label">Est. revenue</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Cablemate_1.jpg?v=1779345452" alt="cableMATE elevator tool"></div>
+      <div class="proj-body">
+        <div class="proj-num">07</div><div class="proj-company">Unitec NZ — NZ Plastics Gold Prize 2004</div>
+        <div class="proj-title">cableMATE — Elevator Maintenance Tool</div>
+        <div class="proj-desc">Award-winning graduate project. Portable device for measuring elevator cable tension via non-contact sensor technology. Fully prototyped and tested in real lift shafts.</div>
+        <div class="proj-tags"><span class="tag hl">NZ Plastics Gold Prize</span><span class="tag">ABS moulding</span><span class="tag">Sensor integration</span></div>
+        <div class="proj-stats"><div><span class="ps-val">Gold</span><span class="ps-label">NZ Plastics Prize 2004</span></div></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="proj-img"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Channel_Vision_2.jpg?v=1779345511" alt="Channel Vision docking stations"></div>
+      <div class="proj-body">
+        <div class="proj-num">08</div><div class="proj-company">Channel Vision USA</div>
+        <div class="proj-title">iPad / iPod In-Wall Docking Stations</div>
+        <div class="proj-desc">Designed in-wall and surface-mount docking stations for iPad and iPod. Convinced the US client to manufacture in New Zealand through Morrow Industries.</div>
+        <div class="proj-tags"><span class="tag hl">Made in NZ</span><span class="tag hl">Consumer electronics</span><span class="tag">Industrial design</span></div>
+        <div class="proj-stats"><div><span class="ps-val">NZ</span><span class="ps-label">Manufactured locally</span></div><div><span class="ps-val">USA</span><span class="ps-label">Client market</span></div></div>
+      </div>
     </div>
   </div>
 
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/SISTEMA_2.jpg?v=1779610580" alt="Sistema Plastics storage range"></div>
-    <div class="body">
-      <div class="num">03</div>
-      <div class="company">Sistema Plastics</div>
-      <div class="title">Large Format Storage Range</div>
-      <div class="desc">Product Design Manager for a $2M USD storage bin development program. Full range design, customer feedback integration, tool room management. 21 tools made, 7 patents granted, delivered in 12 months.</div>
-      <div class="tags"><span class="tag hl">Rotational moulding</span><span class="tag hl">$2M budget</span><span class="tag">7 patents</span><span class="tag">21 tools</span><span class="tag">DFM</span></div>
-      <div class="stats"><div><span class="sv">$2M</span><span class="sl">Budget managed</span></div><div><span class="sv">7</span><span class="sl">Patents granted</span></div><div><span class="sv">21</span><span class="sl">Tools made</span></div></div>
+  <div class="s-rule"></div>
+
+  <section class="section section-alt">
+    <div class="cta">
+      <div><h2>Work with me.</h2><p>Available for consulting — NZ, AU, and international remote.</p></div>
+      <a href="work-with-me.html" class="cta-btn">Start a project &rarr;</a>
     </div>
-  </div>
+  </section>
 
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/f_AND_p_2.jpg?v=1779345531" alt="Fisher and Paykel refrigeration"></div>
-    <div class="body">
-      <div class="num">04</div>
-      <div class="company">Fisher & Paykel Appliances</div>
-      <div class="title">Refrigeration Storage Systems</div>
-      <div class="desc">Product development engineer in Storage Systems Refrigeration. Design, warranty resolution, and cost reduction. Toyota LFPD and LAMDA process discipline. DVP and PPAP quality control.</div>
-      <div class="tags"><span class="tag hl">Toyota LFPD</span><span class="tag hl">UL standards</span><span class="tag">DVP</span><span class="tag">PPAP</span><span class="tag">6 Sigma</span></div>
-      <div class="stats"><div><span class="sv">4 yrs</span><span class="sl">Tenure</span></div><div><span class="sv">Global</span><span class="sl">Product reach</span></div></div>
+  <footer class="footer">
+    <div class="footer-logo">NINAVA</div>
+    <div class="footer-right">
+      <a href="mailto:saleh@ninava.co.nz">saleh@ninava.co.nz</a> &nbsp;·&nbsp; <a href="tel:+64211262516">+64 21 126 2516</a><br>
+      Auckland, New Zealand &nbsp;·&nbsp; &copy; 2025 NINAVA
     </div>
-  </div>
-
-</div>
-
-<div class="rule"></div>
-
-<div class="sec"><div class="sec-title">Design work</div><div class="sec-tag">For NINAVA customers</div></div>
-<div class="grid">
-
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_1.jpg?v=1779345631" alt="Sony Galaxy speaker system"></div>
-    <div class="body">
-      <div class="num">05</div>
-      <div class="company">Slab International — Sony USA</div>
-      <div class="title">Galaxy Speaker System — Sony</div>
-      <div class="desc">Designed the Galaxy multi-mini sound system for Slab International — selected by Sony USA for global distribution. Chosen from hundreds of concepts pitched to Sony's product team.</div>
-      <div class="tags"><span class="tag hl">Selected by Sony USA</span><span class="tag hl">SolidWorks</span><span class="tag">Industrial design</span><span class="tag">Consumer electronics</span></div>
-      <div class="stats"><div><span class="sv">Sony</span><span class="sl">Selected by</span></div><div><span class="sv">Global</span><span class="sl">Distribution</span></div><div><span class="sv">$5M+</span><span class="sl">Est. revenue</span></div></div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Slab_3.jpg?v=1779567917" alt="Maxell Galaxy 2.1 speaker system"></div>
-    <div class="body">
-      <div class="num">06</div>
-      <div class="company">Slab International — Maxell</div>
-      <div class="title">Galaxy Speaker System — Maxell</div>
-      <div class="desc">The Maxell-branded 2.1 multimedia variant of the Galaxy system. Sold 50,000 units in its first year on shelves. Designed for mass market production while keeping the premium aesthetic.</div>
-      <div class="tags"><span class="tag hl">Maxell 2.1</span><span class="tag hl">Mass production</span><span class="tag">Consumer electronics</span><span class="tag">High volume DFM</span></div>
-      <div class="stats"><div><span class="sv">50k</span><span class="sl">Units sold yr 1</span></div><div><span class="sv">2.1</span><span class="sl">Multimedia system</span></div><div><span class="sv">$5M+</span><span class="sl">Est. revenue</span></div></div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Cablemate_1.jpg?v=1779345452" alt="cableMATE elevator tool"></div>
-    <div class="body">
-      <div class="num">07</div>
-      <div class="company">Unitec NZ — NZ Plastics Gold Prize 2004</div>
-      <div class="title">cableMATE — Elevator Maintenance Tool</div>
-      <div class="desc">Award-winning graduate project. Portable device for measuring elevator cable tension via non-contact sensor technology. Fully sketched, modelled, prototyped, and tested in real lift shafts.</div>
-      <div class="tags"><span class="tag hl">NZ Plastics Gold Prize</span><span class="tag hl">Sketched to prototype</span><span class="tag">ABS moulding</span><span class="tag">Sensor integration</span></div>
-      <div class="stats"><div><span class="sv">Gold</span><span class="sl">NZ Plastics Prize 2004</span></div><div><span class="sv">Real</span><span class="sl">Prototype built & tested</span></div></div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0773/2589/3810/files/Channel_Vision_2.jpg?v=1779345511" alt="Channel Vision docking stations"></div>
-    <div class="body">
-      <div class="num">08</div>
-      <div class="company">Channel Vision USA</div>
-      <div class="title">iPad / iPod In-Wall Docking Stations</div>
-      <div class="desc">Designed in-wall and surface-mount docking stations for iPad and iPod. Convinced the US client to manufacture in New Zealand through Morrow Industries — a rare win for NZ manufacturing.</div>
-      <div class="tags"><span class="tag hl">Made in NZ</span><span class="tag hl">Consumer electronics</span><span class="tag">Industrial design</span><span class="tag">Wall integration</span></div>
-      <div class="stats"><div><span class="sv">NZ</span><span class="sl">Manufactured locally</span></div><div><span class="sv">USA</span><span class="sl">Client market</span></div></div>
-    </div>
-  </div>
-
-</div>
-
-<div class="rule"></div>
-
-<div class="cta">
-  <div><h2>Work with me.</h2><p>Available for consulting — NZ, AU, and international remote.</p></div>
-  <a href="mailto:saleh@ninava.co.nz" class="cta-btn">Get in touch</a>
-</div>
-
-<footer>
-  <span>© 2025 Saleh Ghiyath — NINAVA</span>
-  <span>saleh@ninava.co.nz · +64 21 1262516 · Auckland, NZ</span>
-</footer>
-
+  </footer>
 </div>
 </body>
 </html>

@@ -1,204 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Me — NINAVA Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#1C1510;--bg2:#231a13;--bg3:#2a1f16;--cream:#F5EEE4;--bronze:#D4995A;--bronze2:#a06e38;--muted:#D0BFA8;--dim:#8a7060;--rule:#3a2f24}
-.ninava-page{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;margin:0 -20px;padding:0}
-.n-hero{padding:5rem 5rem 3rem;max-width:860px}
-.n-eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.25rem;display:block}
-.n-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;color:var(--cream);margin-bottom:1rem}
-.n-h1 .a{color:var(--bronze)}
-.n-hero-sub{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:0}
-.n-rule{width:calc(100% - 10rem);margin:0 5rem;height:1px;background:var(--rule)}
-/* SERVICE CARDS */
-.n-services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule)}
-.n-service{background:var(--bg2);padding:2rem;display:flex;flex-direction:column;transition:background .2s}
-.n-service:hover{background:var(--bg3)}
-.n-service-num{font-family:'Bebas Neue',sans-serif;font-size:.75rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.75rem}
-.n-service-title{font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.5rem}
-.n-service-desc{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;flex:1}
-.n-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0}
-.n-tag{font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:2px 9px}
-.n-tag.hl{color:var(--bronze);border-color:var(--bronze2)}
-.n-price-block{padding-top:1.25rem;border-top:1px solid var(--rule);margin-top:1.25rem}
-.n-service-price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.25rem}
-.n-service-price-note{font-size:.72rem;color:var(--dim);letter-spacing:.05em}
-/* HOW IT WORKS */
-.n-how{padding:3rem 5rem}
-.n-how h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--cream);margin-bottom:2rem}
-.n-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-.n-step-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--bronze);opacity:.4;line-height:1;margin-bottom:.5rem}
-.n-step-title{font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.4rem}
-.n-step-desc{font-size:.85rem;color:var(--muted);line-height:1.7}
-/* CREDENTIALS */
-.n-creds{padding:3rem 5rem;background:var(--bg2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.n-creds h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--cream);margin-bottom:2rem}
-.n-cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem}
-.n-cred-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.25rem}
-.n-cred-label{font-size:.78rem;color:var(--muted);line-height:1.5}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#161210;--bg2:#1e1814;--bg3:#261e16;--cream:#F2EAD8;--bronze:#C8894A;--bronze2:#9a6530;--muted:#B8A88A;--dim:#6a5a48;--rule:#2e2418;--pad:5rem}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(22,18,16,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.18em;color:var(--cream);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--bronze);padding:.55rem 1.25rem;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--bronze2)}
+.page{padding-top:64px}
+.s-rule{height:1px;background:var(--rule);margin:0 var(--pad)}
+.section{padding:6rem var(--pad)}
+.section-alt{background:var(--bg2)}
+.s-eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:1rem;display:block}
+.s-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
+.s-h2 em{color:var(--bronze);font-style:normal}
+
+/* HERO */
+.hero{padding:5rem var(--pad) 4rem;max-width:860px}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,8rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
+.hero-h1 em{color:var(--bronze);font-style:normal;display:block}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.9}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule)}
+.service{background:var(--bg2);padding:2.5rem 2rem;display:flex;flex-direction:column;transition:background .2s}
+.service:hover{background:var(--bg3)}
+.service-num{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--dim);margin-bottom:.75rem}
+.service-title{font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.3}
+.service-desc{font-size:.85rem;color:var(--muted);line-height:1.8;flex:1;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1.25rem}
+.tag{font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:2px 8px}
+.tag.hl{color:var(--bronze);border-color:var(--bronze2)}
+.price-block{padding-top:1.25rem;border-top:1px solid var(--rule);margin-top:auto}
+.price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.2rem}
+.price-note{font-size:.68rem;color:var(--dim);letter-spacing:.05em}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;margin-top:3rem}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--bronze);opacity:.25;line-height:1;margin-bottom:.5rem}
+.step-title{font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.4rem}
+.step-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
+
+/* CREDS */
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule)}
+.cred{background:var(--bg2);padding:2rem 1.75rem}
+.cred-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--bronze);display:block;line-height:1;margin-bottom:.3rem}
+.cred-label{font-size:.75rem;color:var(--muted);line-height:1.5}
+
 /* BOOKING */
-.n-contact{padding:3rem 5rem}
-.n-contact h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--cream);margin-bottom:.5rem}
-.n-contact-sub{font-size:.95rem;color:var(--muted);margin-bottom:1.5rem}
-.n-calendly-btn{display:inline-block;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .25s;margin-bottom:1rem}
-.n-calendly-btn:hover{background:var(--bronze2)}
-.n-contact-or{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:1.5rem;margin-top:.25rem}
-.n-form .n-field{margin-bottom:1.25rem}
-.n-field label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze);margin-bottom:.5rem}
-.n-field input,.n-field select,.n-field textarea{width:100%;max-width:560px;background:var(--bg2);border:1px solid var(--rule);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:300;padding:.9rem 1.1rem;outline:none;transition:border-color .3s;border-radius:0;-webkit-appearance:none}
-.n-field input:focus,.n-field select:focus,.n-field textarea:focus{border-color:var(--bronze)}
-.n-field textarea{min-height:120px;resize:vertical}
-.n-field select option{background:var(--bg2);color:var(--cream)}
-.n-submit-btn{background:var(--bronze);color:var(--bg);border:none;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:1rem 2.5rem;cursor:pointer;transition:background .25s;max-width:560px;width:100%}
-.n-submit-btn:hover{background:var(--bronze2)}
-.n-form-success{display:none;background:var(--bg3);border:1px solid var(--bronze2);padding:1.25rem;margin-top:1rem;font-size:.95rem;color:var(--muted);max-width:560px}
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.booking-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:.95;color:var(--cream);margin-bottom:1rem}
+.booking-left p{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem}
+.cal-btns{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.cal-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bronze);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:1.1rem 1.75rem;text-decoration:none;transition:background .2s}
+.cal-btn:hover{background:var(--bronze2)}
+.cal-btn-outline{background:transparent;color:var(--bronze);border:1px solid var(--bronze2)}
+.cal-btn-outline:hover{background:var(--bronze);color:var(--bg)}
+.or-divider{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:1.5rem 0;display:flex;align-items:center;gap:1rem}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--rule)}
+
+/* FORM */
+.field{margin-bottom:1.25rem}
+.field label{display:block;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin-bottom:.5rem}
+.field input,.field select,.field textarea{width:100%;background:var(--bg2);border:1px solid var(--rule);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;padding:.85rem 1rem;outline:none;transition:border-color .3s;border-radius:0;-webkit-appearance:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--bronze)}
+.field textarea{min-height:110px;resize:vertical}
+.field select option{background:var(--bg2)}
+.submit-btn{background:var(--bronze);color:var(--bg);border:none;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:1rem 2rem;cursor:pointer;transition:background .2s;width:100%}
+.submit-btn:hover{background:var(--bronze2)}
+.form-success{display:none;background:var(--bg3);border:1px solid var(--bronze2);padding:1.25rem;margin-top:1rem;font-size:.9rem;color:var(--muted)}
+
 /* FOOTER */
-.n-page-footer{padding:2rem 5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
-.n-foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.15em;color:var(--dim)}
-.n-foot-right{font-size:.82rem;color:var(--muted);text-align:right;line-height:1.7}
-.n-foot-right a{color:var(--muted);text-decoration:none}
-.n-foot-right a:hover{color:var(--bronze)}
-@media(max-width:768px){
-  .n-hero,.n-how,.n-contact{padding-left:1.5rem;padding-right:1.5rem}
-  .n-rule{width:calc(100% - 3rem);margin:0 1.5rem}
-  .n-services{grid-template-columns:1fr}
-  .n-steps{grid-template-columns:1fr 1fr}
-  .n-creds,.n-cred-grid{padding:2rem 1.5rem}
-  .n-cred-grid{grid-template-columns:1fr 1fr}
-  .n-page-footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start}
-  .n-foot-right{text-align:left}
+.footer{padding:2.5rem var(--pad);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.18em;color:var(--dim)}
+.footer-right{font-size:.78rem;color:var(--muted);text-align:right;line-height:1.8}
+.footer-right a{color:var(--muted);text-decoration:none}
+.footer-right a:hover{color:var(--bronze)}
+
+@media(max-width:900px){
+  :root{--pad:2rem}
+  .nav-links{display:none}
+  .services{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .booking-wrap{grid-template-columns:1fr}
+  .footer{flex-direction:column;align-items:flex-start}
+  .footer-right{text-align:left}
 }
 </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">NINAVA</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="work-with-me.html" class="active">Work with me</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Book a call</a>
+</nav>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<div class="ninava-page">
-
-  <div class="n-hero">
-    <span class="n-eyebrow">Consulting — Saleh Ghiyath</span>
-    <h1 class="n-h1">Work<br><span class="a">with</span><br>me.</h1>
-    <p class="n-hero-sub">20+ years taking hardware products from concept to production line. I work with manufacturers, hardware startups, and product companies that need mechanical and product design engineering — someone who has managed tooling budgets, run factory trials, and shipped products that actually work.</p>
+<div class="page">
+  <div class="hero">
+    <span class="s-eyebrow">Engage the Studio — Saleh Ghiyath</span>
+    <h1 class="hero-h1">Start a<em>project.</em></h1>
+    <p class="hero-sub">20+ years taking hardware products from concept to production. I work with manufacturers, startups, and product companies who need real mechanical and product design engineering.</p>
   </div>
 
-  <div class="n-rule"></div>
+  <div class="s-rule"></div>
 
-  <div class="n-services">
-
-    <div class="n-service">
-      <div class="n-service-num">01</div>
-      <div class="n-service-title">Product Design &amp; CAD</div>
-      <div class="n-service-desc">Full product development from concept to production-ready CAD. SolidWorks and Creo. DFM/DFA review included. Deliverables: native CAD files, STEP files, engineering drawings, and photorealistic renders for marketing or pitching.</div>
-      <div class="n-tags"><span class="n-tag hl">SolidWorks</span><span class="n-tag hl">DFM / DFA</span><span class="n-tag">Creo</span><span class="n-tag">Engineering drawings</span><span class="n-tag">Product renders</span></div>
-      <div class="n-price-block">
-        <span class="n-service-price">$5,000–$25,000</span>
-        <span class="n-service-price-note">NZD per project</span>
+  <section class="section" style="padding-top:0;padding-bottom:0">
+    <div class="services">
+      <div class="service">
+        <div class="service-num">01</div>
+        <div class="service-title">Product Design &amp; CAD</div>
+        <div class="service-desc">Full product development from concept to production-ready CAD. SolidWorks and Creo. DFM/DFA built in. Deliverables: native CAD, STEP, engineering drawings, photorealistic renders.</div>
+        <div class="tags"><span class="tag hl">SolidWorks</span><span class="tag hl">DFM / DFA</span><span class="tag">Creo</span><span class="tag">Eng. drawings</span></div>
+        <div class="price-block"><span class="price">$5,000–$25,000</span><span class="price-note">NZD per project</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">02</div>
+        <div class="service-title">3D Visualisation &amp; Rendering</div>
+        <div class="service-desc">Photorealistic product renders for marketing, investor pitches, or patent applications. 1–5 day turnaround. Multiple colourways and hero shots ready for web or print.</div>
+        <div class="tags"><span class="tag hl">3D Rendering</span><span class="tag hl">SolidWorks</span><span class="tag">Multiple colourways</span></div>
+        <div class="price-block"><span class="price">$500–$2,500</span><span class="price-note">NZD per scene set</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">03</div>
+        <div class="service-title">DFM Review &amp; Audit</div>
+        <div class="service-desc">Review your existing design for manufacturability issues before tooling. Written report with recommended changes. Catch problems before they cost you money.</div>
+        <div class="tags"><span class="tag hl">DFM audit</span><span class="tag hl">FMEA</span><span class="tag">Written report</span><span class="tag">Tooling advice</span></div>
+        <div class="price-block"><span class="price">$1,500–$4,000</span><span class="price-note">NZD per review</span></div>
+      </div>
+      <div class="service">
+        <div class="service-num">04</div>
+        <div class="service-title">Studio Retainer</div>
+        <div class="service-desc">Ongoing mechanical and product design engineering support. For hardware companies that need consistent engineering input without a full-time hire.</div>
+        <div class="tags"><span class="tag hl">Embedded support</span><span class="tag hl">Mechanical eng.</span><span class="tag">NZ &amp; International</span></div>
+        <div class="price-block"><span class="price">$3,000–$6,000</span><span class="price-note">NZD per month</span></div>
       </div>
     </div>
+  </section>
 
-    <div class="n-service">
-      <div class="n-service-num">02</div>
-      <div class="n-service-title">3D Visualisation &amp; Rendering</div>
-      <div class="n-service-desc">Photorealistic product renders for marketing, investor pitches, or patent applications. Fast turnaround — 1 to 5 days. Multiple colourways, materials, and hero shots ready for web or print.</div>
-      <div class="n-tags"><span class="n-tag hl">3D Rendering</span><span class="n-tag hl">SolidWorks</span><span class="n-tag">Multiple colourways</span><span class="n-tag">Marketing ready</span></div>
-      <div class="n-price-block">
-        <span class="n-service-price">$500–$2,500</span>
-        <span class="n-service-price-note">NZD per scene set</span>
+  <div class="s-rule"></div>
+
+  <section class="section section-alt">
+    <span class="s-eyebrow">Process</span>
+    <h2 class="s-h2">How it works.</h2>
+    <div class="steps">
+      <div><div class="step-num">01</div><div class="step-title">Get in touch</div><div class="step-desc">Book a call or fill in the form below. I respond within 24 hours.</div></div>
+      <div><div class="step-num">02</div><div class="step-title">Discovery call</div><div class="step-desc">30–60 minutes to understand your brief and confirm I'm the right fit.</div></div>
+      <div><div class="step-num">03</div><div class="step-title">Proposal</div><div class="step-desc">Clear scope, deliverables, timeline, and fixed price. No hourly surprises.</div></div>
+      <div><div class="step-num">04</div><div class="step-title">We get to work</div><div class="step-desc">50% deposit to start. Regular updates. Final files on completion.</div></div>
+    </div>
+  </section>
+
+  <div class="s-rule"></div>
+
+  <section class="section">
+    <span class="s-eyebrow">Why work with me</span>
+    <h2 class="s-h2">The track record.</h2>
+    <div class="creds" style="margin-top:3rem">
+      <div class="cred"><span class="cred-val">20+</span><span class="cred-label">Years engineering real hardware products</span></div>
+      <div class="cred"><span class="cred-val">7</span><span class="cred-label">Patents granted across multiple categories</span></div>
+      <div class="cred"><span class="cred-val">$2M</span><span class="cred-label">Budget managed at Sistema Plastics</span></div>
+      <div class="cred"><span class="cred-val">50k</span><span class="cred-label">Units sold — Maxell speaker, year one</span></div>
+      <div class="cred"><span class="cred-val">Sony</span><span class="cred-label">Product selected by Sony USA</span></div>
+      <div class="cred"><span class="cred-val">Gold</span><span class="cred-label">NZ Plastics Industry Prize 2004</span></div>
+    </div>
+  </section>
+
+  <div class="s-rule"></div>
+
+  <section class="section section-alt" id="booking">
+    <div class="booking-wrap">
+      <div class="booking-left">
+        <span class="s-eyebrow">Book a call</span>
+        <h2>Let's talk about<em style="color:var(--bronze);font-style:normal;display:block">your project.</em></h2>
+        <p>Start with a discovery call. Bring your brief, a problem to solve, or just an idea. No commitment required.</p>
+        <div class="cal-btns">
+          <a href="https://calendly.com/saleh-ghiyath/60min" target="_blank" class="cal-btn">Book a 60-min call &nbsp;&rarr;</a>
+          <a href="https://calendly.com/saleh-ghiyath/30min" target="_blank" class="cal-btn cal-btn-outline">Quick 30-min intro &nbsp;&rarr;</a>
+        </div>
+        <div style="font-size:.82rem;color:var(--muted);line-height:1.8">
+          <a href="mailto:saleh@ninava.co.nz" style="color:var(--muted);text-decoration:none">saleh@ninava.co.nz</a><br>
+          <a href="tel:+64211262516" style="color:var(--muted);text-decoration:none">+64 21 126 2516</a><br>
+          Auckland, NZ &nbsp;·&nbsp; Available NZ, AU &amp; International
+        </div>
+      </div>
+      <div>
+        <div class="or-divider">Or send a message</div>
+        <div class="field"><label>Your name</label><input type="text" id="f-name" placeholder="John Smith"></div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" placeholder="john@company.com"></div>
+        <div class="field"><label>Company</label><input type="text" id="f-company" placeholder="Your company"></div>
+        <div class="field"><label>Service needed</label>
+          <select id="f-service">
+            <option value="">Select a service</option>
+            <option>Product Design &amp; CAD</option>
+            <option>3D Visualisation &amp; Rendering</option>
+            <option>DFM Review &amp; Audit</option>
+            <option>Studio Retainer</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell me about your project</label><textarea id="f-msg" placeholder="What are you building? What's your timeline?"></textarea></div>
+        <button class="submit-btn" onclick="sendEnquiry()">Send enquiry &rarr;</button>
+        <div class="form-success" id="f-success"><strong>Message received.</strong> I'll be in touch within 24 hours.</div>
       </div>
     </div>
+  </section>
 
-    <div class="n-service">
-      <div class="n-service-num">03</div>
-      <div class="n-service-title">DFM Review &amp; Engineering Audit</div>
-      <div class="n-service-desc">Review your existing design for manufacturability issues before tooling. Identify problems that will cost you time and money in production. Written report with recommended changes.</div>
-      <div class="n-tags"><span class="n-tag hl">DFM audit</span><span class="n-tag hl">FMEA</span><span class="n-tag">Written report</span><span class="n-tag">Tooling advice</span></div>
-      <div class="n-price-block">
-        <span class="n-service-price">$1,500–$4,000</span>
-        <span class="n-service-price-note">NZD per review</span>
-      </div>
+  <footer class="footer">
+    <div class="footer-logo">NINAVA</div>
+    <div class="footer-right">
+      <a href="mailto:saleh@ninava.co.nz">saleh@ninava.co.nz</a> &nbsp;·&nbsp; <a href="tel:+64211262516">+64 21 126 2516</a><br>
+      Auckland, New Zealand &nbsp;·&nbsp; &copy; 2025 NINAVA
     </div>
-
-    <div class="n-service">
-      <div class="n-service-num">04</div>
-      <div class="n-service-title">Monthly Retainer</div>
-      <div class="n-service-desc">Ongoing mechanical and product design engineering support. Ideal for hardware startups and manufacturers who need consistent engineering input without a full-time hire. Scope defined per engagement.</div>
-      <div class="n-tags"><span class="n-tag hl">Scope defined per engagement</span><span class="n-tag hl">Mechanical engineering</span><span class="n-tag">NZ &amp; International</span><span class="n-tag">Remote available</span></div>
-      <div class="n-price-block">
-        <span class="n-service-price">$3,000–$6,000</span>
-        <span class="n-service-price-note">NZD per month</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="n-rule"></div>
-
-  <div class="n-how">
-    <h2>How it works</h2>
-    <div class="n-steps">
-      <div><div class="n-step-num">01</div><div class="n-step-title">Get in touch</div><div class="n-step-desc">Fill in the form below or book a call directly. I respond within 24 hours.</div></div>
-      <div><div class="n-step-num">02</div><div class="n-step-title">Discovery call</div><div class="n-step-desc">30 minutes to understand your brief and confirm I'm the right fit.</div></div>
-      <div><div class="n-step-num">03</div><div class="n-step-title">Proposal</div><div class="n-step-desc">Clear scope, deliverables, timeline, and fixed price. No hourly surprises.</div></div>
-      <div><div class="n-step-num">04</div><div class="n-step-title">We get to work</div><div class="n-step-desc">50% deposit to start. Regular updates. Final files on completion.</div></div>
-    </div>
-  </div>
-
-  <div class="n-rule"></div>
-
-  <div class="n-creds">
-    <h2>Why work with me</h2>
-    <div class="n-cred-grid">
-      <div class="n-cred-item"><span class="n-cred-val">20+</span><span class="n-cred-label">Years engineering real hardware products</span></div>
-      <div class="n-cred-item"><span class="n-cred-val">7</span><span class="n-cred-label">Patents granted across multiple categories</span></div>
-      <div class="n-cred-item"><span class="n-cred-val">$2M</span><span class="n-cred-label">Budget managed at Sistema Plastics</span></div>
-      <div class="n-cred-item"><span class="n-cred-val">50k</span><span class="n-cred-label">Units sold — Maxell speaker, year one</span></div>
-      <div class="n-cred-item"><span class="n-cred-val">Sony</span><span class="n-cred-label">Product selected by Sony USA</span></div>
-      <div class="n-cred-item"><span class="n-cred-val">Gold</span><span class="n-cred-label">NZ Plastics Industry Prize 2004</span></div>
-    </div>
-  </div>
-
-  <div class="n-rule"></div>
-
-  <div class="n-contact">
-    <h2>Book a call</h2>
-    <p class="n-contact-sub">60 minutes. Bring your brief or just a problem to solve.</p>
-    <a href="https://calendly.com/saleh-ghiyath/60min" target="_blank" class="n-calendly-btn">Book a 60-min call →</a>
-    <p class="n-contact-or">or send a message</p>
-    <div class="n-form">
-      <div class="n-field"><label>Your name</label><input type="text" id="n-name" placeholder="John Smith"></div>
-      <div class="n-field"><label>Email</label><input type="email" id="n-email" placeholder="john@company.com"></div>
-      <div class="n-field"><label>Company</label><input type="text" id="n-company" placeholder="Your company"></div>
-      <div class="n-field"><label>Service needed</label>
-        <select id="n-service">
-          <option value="">Select a service</option>
-          <option>Product Design &amp; CAD</option>
-          <option>3D Visualisation &amp; Rendering</option>
-          <option>DFM Review &amp; Engineering Audit</option>
-          <option>Monthly Retainer</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="n-field"><label>Tell me about your project</label><textarea id="n-message" placeholder="What are you building? What's your timeline?"></textarea></div>
-      <button class="n-submit-btn" onclick="nSubmit()">Send enquiry</button>
-      <div class="n-form-success" id="n-success"><strong>Message received.</strong> I'll be in touch within 24 hours.</div>
-    </div>
-  </div>
-
-  <div class="n-page-footer">
-    <div class="n-foot-logo">NINAVA</div>
-    <div class="n-foot-right">
-      <a href="mailto:saleh@ninava.co.nz">saleh@ninava.co.nz</a> &nbsp;·&nbsp; <a href="tel:+64211262516">+64 21 1262516</a><br>
-      Auckland, New Zealand &nbsp;·&nbsp; Available NZ, AU &amp; International
-    </div>
-  </div>
-
+  </footer>
 </div>
 
 <script>
-function nSubmit(){
-  var name=document.getElementById('n-name').value;
-  var email=document.getElementById('n-email').value;
-  var msg=document.getElementById('n-message').value;
-  if(!name||!email||!msg){alert('Please fill in your name, email, and project details.');return;}
-  var subject=encodeURIComponent('NINAVA Consulting Enquiry — '+name);
-  var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nCompany: '+document.getElementById('n-company').value+'\nService: '+document.getElementById('n-service').value+'\n\nProject details:\n'+msg);
-  window.location.href='mailto:saleh@ninava.co.nz?subject='+subject+'&body='+body;
-  document.getElementById('n-success').style.display='block';
+function sendEnquiry(){
+  var n=document.getElementById('f-name').value;
+  var e=document.getElementById('f-email').value;
+  var m=document.getElementById('f-msg').value;
+  if(!n||!e||!m){alert('Please fill in your name, email, and project details.');return;}
+  var s=encodeURIComponent('NINAVA Studio Enquiry — '+n);
+  var b=encodeURIComponent('Name: '+n+'\nEmail: '+e+'\nCompany: '+document.getElementById('f-company').value+'\nService: '+document.getElementById('f-service').value+'\n\nProject details:\n'+m);
+  window.location.href='mailto:saleh@ninava.co.nz?subject='+s+'&body='+b;
+  document.getElementById('f-success').style.display='block';
 }
 </script>
+</body>
+</html>
